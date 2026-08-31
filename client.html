@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost:5173/register -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="./client_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/GENERAL/Documents/GitHub/SecureBank-MERN/client/src/index.css">* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f5f7fb;
+    color: #172033;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: white;
+
+    border-bottom: 1px solid #e7eaf0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.logo-icon {
+    font-size: 25px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.nav-button {
+    background: #172033;
+    color: white;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+}
+
+.hero {
+    min-height: 570px;
+
+    padding: 70px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 80px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.security-badge {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    background: #eaf7ef;
+
+    color: #167447;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 72px);
+
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #1769aa;
+}
+
+.hero p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #667085;
+
+    max-width: 580px;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.primary-button,
+.secondary-button {
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: inline-block;
+}
+
+.primary-button {
+    background: #172033;
+    color: white;
+}
+
+.secondary-button {
+    background: white;
+
+    color: #172033;
+
+    border: 1px solid #d9dee8;
+}
+
+.security-card {
+    width: 380px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 20px 50px rgba(25, 35, 55, 0.10);
+}
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: .5px;
+}
+
+.status-dot {
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #22a05a;
+
+    margin-right: 7px;
+}
+
+.shield {
+    width: 100px;
+    height: 100px;
+
+    margin: 40px auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+
+    background: #edf5ff;
+
+    border-radius: 50%;
+}
+
+.security-card h2 {
+    text-align: center;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.security-card > p {
+    text-align: center;
+
+    color: #667085;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.security-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.security-items div {
+    padding: 12px;
+
+    background: #f7f9fc;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+.security-items span {
+    color: #16864b;
+
+    font-weight: 900;
+
+    margin-right: 8px;
+}
+
+.features {
+    background: white;
+
+    padding: 55px 7%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 35px;
+}
+
+.feature {
+    padding: 15px;
+}
+
+.feature-icon {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #667085;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+.page-container {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.auth-card {
+    width: 100%;
+
+    max-width: 440px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 45px rgba(25, 35, 55, 0.08);
+}
+
+.auth-icon {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+.auth-card h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.auth-card > p {
+    color: #667085;
+
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d9dee8;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #1769aa;
+
+    box-shadow:
+        0 0 0 3px rgba(23, 105, 170, .10);
+}
+
+.full-width {
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 50px;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .security-card {
+        width: 100%;
+
+        max-width: 400px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+}
+
+.form-message {
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-message.error {
+    background: #fff1f0;
+    color: #b42318;
+    border: 1px solid #fecdca;
+}
+
+.form-message.success {
+    background: #ecfdf3;
+    color: #067647;
+    border: 1px solid #abefc6;
+}
+
+.password-requirements {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: #f7f9fc;
+    border-radius: 7px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #667085;
+}
+
+.auth-footer {
+    margin-top: 20px !important;
+    text-align: center;
+    font-size: 14px;
+}
+
+.auth-footer a {
+    color: #1769aa;
+    font-weight: 700;
+}
+
+button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.dashboard {
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+.dashboard-nav {
+    height: 72px;
+    padding: 0 7%;
+    background: white;
+    border-bottom: 1px solid #e7eaf0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout-button {
+    border: 1px solid #d9dee8;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dashboard-content {
+    padding: 45px 7%;
+}
+
+.dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    color: #1769aa;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+.dashboard-heading h1 {
+    font-size: 32px;
+}
+
+.protected-badge {
+    background: #ecfdf3;
+    color: #067647;
+    padding: 9px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.balance-card {
+    background: #172033;
+    color: white;
+    border-radius: 18px;
+    padding: 32px;
+    margin-bottom: 30px;
+}
+
+.balance-card p {
+    opacity: .75;
+    font-size: 14px;
+}
+
+.balance-card h2 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.balance-card span {
+    opacity: .65;
+    font-size: 13px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #e7eaf0;
+}
+
+.card-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card h3 {
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: #667085;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.secure-status {
+    color: #067647;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.card-button {
+    padding: 9px 14px;
+    border: 1px solid #d9dee8;
+    background: white;
+    border-radius: 7px;
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-heading {
+        align-items: flex-start;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+}</style></head>
+  <body>
+    <div id="root"><main class="page-container"><div class="auth-card"><div class="auth-icon">🛡️</div><h1>Create Secure Account</h1><p>Your account is protected by multiple security controls.</p><form novalidate=""><div class="form-group"><label for="name">Full Name</label><input id="name" placeholder="John Doe" autocomplete="name" maxlength="100" type="text" value="Oluwakayowa Temigbe" name="name"></div><div class="form-group"><label for="email">Email Address</label><input id="email" placeholder="you@example.com" autocomplete="email" maxlength="254" type="email" value="kayowatemigbe@gmail.com" name="email"></div><div class="form-group"><label for="password">Password</label><input id="password" placeholder="Create a strong password" autocomplete="new-password" maxlength="128" type="password" value="v4B4rbEJ@Jz4BQa" name="password" aria-autocomplete="list"><div class="password-requirements"><div>✓ At least 8 characters</div><div>✓ One uppercase letter</div><div>✓ One lowercase letter</div><div>✓ One number</div></div></div><div class="form-group"><label for="confirmPassword">Confirm Password</label><input id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password" type="password" value="" name="confirmPassword"></div><div class="form-message error">Passwords do not match.</div><button type="submit" class="primary-button full-width">Create Secure Account</button></form><p class="auth-footer">Already have an account? <a href="http://localhost:5173/login" data-discover="true">Login</a></p></div></main></div>
+    <script type="module" src="./client_files/main.jsx"></script>
+  
+
+</body></html>
