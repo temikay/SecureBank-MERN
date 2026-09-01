@@ -596,26 +596,20 @@ const loginUser = async (req, res) => {
 );
 
 
-res.cookie(
-    "accessToken",
-    token,
-    {
-        httpOnly: true,
+res.cookie("accessToken", token, {
+    httpOnly: true,
 
-        secure:
-            process.env.NODE_ENV === "production",
+    secure: process.env.NODE_ENV === "production",
 
-        sameSite:
-            process.env.NODE_ENV === "production"
-                ? "strict"
-                : "lax",
+    sameSite:
+        process.env.NODE_ENV === "production"
+            ? "none"
+            : "lax",
 
-        maxAge:
-            15 * 60 * 1000,
+    maxAge: 15 * 60 * 1000,
 
-        path: "/"
-    }
-);
+    path: "/"
+});
 
 
 return res.status(200).json({
