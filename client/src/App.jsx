@@ -1,45 +1,117 @@
 import {
-    Routes,
-    Route
+    useEffect,
+    useState
+} from "react";
+
+import {
+    Navigate,
+    Outlet
 } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
+import api from "../services/api";
 
 
-function App() {
+function ProtectedRoute() {
 
-    return (
+    const [
+        checkingAuth,
+        setCheckingAuth
+    ] = useState(true);
 
-        <Routes>
+    const [
+        authenticated,
+        setAuthenticated
+    ] = useState(false);
 
-            <Route
-                path="/"
-                element={<Home />}
+
+    useEffect(() => {
+
+        let mounted = true;
+
+
+        const verifyAuthentication =
+            async () => {
+
+                try {
+
+                    await api.get(
+                        "/users/me"
+                    );
+
+                    if (mounted) {
+
+                        setAuthenticated(true);
+
+                    }
+
+                } catch (error) {
+
+                    if (mounted) {
+
+                        setAuthenticated(false);
+
+                    }
+
+                } finally {
+
+                    if (mounted) {
+
+                        setCheckingAuth(false);
+
+                    }
+
+                }
+
+            };
+
+
+        verifyAuthentication();
+
+
+        return () => {
+
+            mounted = false;
+
+        };
+
+    }, []);
+
+
+    if (checkingAuth) {
+
+        return (
+
+            <div
+                style={{
+                    minHeight: "100vh",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}
+            >
+                Verifying authentication...
+            </div>
+
+        );
+
+    }
+
+
+    if (!authenticated) {
+
+        return (
+            <Navigate
+                to="/login"
+                replace
             />
+        );
 
-            <Route
-                path="/login"
-                element={<Login />}
-            />
+    }
 
-            <Route
-                path="/register"
-                element={<Register />}
-            />
 
-            <Route
-                path="/dashboard"
-                element={<Dashboard />}
-            />
-
-        </Routes>
-
-    );
+    return <Outlet />;
 
 }
 
 
-export default App;
+export default ProtectedRoute;
