@@ -1,117 +1,57 @@
 import {
-    useEffect,
-    useState
-} from "react";
-
-import {
-    Navigate,
-    Outlet
+    Routes,
+    Route
 } from "react-router-dom";
 
-import api from "../services/api";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+
+import ProtectedRoute
+    from "./components/ProtectedRoute";
 
 
-function ProtectedRoute() {
+function App() {
 
-    const [
-        checkingAuth,
-        setCheckingAuth
-    ] = useState(true);
+    return (
 
-    const [
-        authenticated,
-        setAuthenticated
-    ] = useState(false);
+        <Routes>
 
-
-    useEffect(() => {
-
-        let mounted = true;
-
-
-        const verifyAuthentication =
-            async () => {
-
-                try {
-
-                    await api.get(
-                        "/users/me"
-                    );
-
-                    if (mounted) {
-
-                        setAuthenticated(true);
-
-                    }
-
-                } catch (error) {
-
-                    if (mounted) {
-
-                        setAuthenticated(false);
-
-                    }
-
-                } finally {
-
-                    if (mounted) {
-
-                        setCheckingAuth(false);
-
-                    }
-
-                }
-
-            };
-
-
-        verifyAuthentication();
-
-
-        return () => {
-
-            mounted = false;
-
-        };
-
-    }, []);
-
-
-    if (checkingAuth) {
-
-        return (
-
-            <div
-                style={{
-                    minHeight: "100vh",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center"
-                }}
-            >
-                Verifying authentication...
-            </div>
-
-        );
-
-    }
-
-
-    if (!authenticated) {
-
-        return (
-            <Navigate
-                to="/login"
-                replace
+            <Route
+                path="/"
+                element={<Home />}
             />
-        );
 
-    }
+            <Route
+                path="/login"
+                element={<Login />}
+            />
+
+            <Route
+                path="/register"
+                element={<Register />}
+            />
 
 
-    return <Outlet />;
+            {/* Protected Routes */}
+
+            <Route
+                element={<ProtectedRoute />}
+            >
+
+                <Route
+                    path="/dashboard"
+                    element={<Dashboard />}
+                />
+
+            </Route>
+
+        </Routes>
+
+    );
 
 }
 
 
-export default ProtectedRoute;
+export default App;
